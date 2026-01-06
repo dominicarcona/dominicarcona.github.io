@@ -24,7 +24,7 @@ main {
 }
 
 h1, h2, h3 {
-  color: #222;
+  color: var(--text-color);
 }
 
 h2 {
@@ -37,7 +37,7 @@ h2 {
 nav {
   position: sticky;
   top: 0;
-  background: white;
+  background: var(--bg-color);
   border-bottom: 1px solid var(--border-gray);
   padding: 12px 20px;
   z-index: 10;
@@ -153,7 +153,7 @@ footer {
   text-align: center;
   padding: 20px;
   border-top: 1px solid var(--border-gray);
-  color: #777;
+  color: var(--text-gray);
   font-size: 0.9em;
   margin-top: 60px;
 }
