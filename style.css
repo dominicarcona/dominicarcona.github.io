@@ -1,5 +1,7 @@
 /* ---------- GLOBAL VARIABLES ---------- */
 :root {
+  --bg-color: white;
+  --text-color: #222;
   --accent: #1a73e8;
   --light-gray: #f5f5f5;
   --border-gray: #ddd;
@@ -12,7 +14,8 @@ body {
   margin: 0;
   color: #222;
   line-height: 1.6;
-  background-color: white;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 main {
