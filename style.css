@@ -186,6 +186,10 @@ details > ul {
   margin-top: 10px;
 }
 
+details[open] summary {
+  margin-bottom: 8px;
+}
+
 /* ---------- LISTS ---------- */
 ul {
   padding-left: 20px;
