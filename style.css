@@ -277,6 +277,10 @@ body.dark nav a.active {
   text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
 }
 
+.hero-small {
+  height: 220px;
+}
+
 /* Accent color for section headings */
 h2 {
   color: var(--accent-dark);
@@ -296,5 +300,22 @@ a:hover {
   color: var(--accent-light);
 }
 
+/* ---------- RESEARCH PAPERS ---------- */
+.paper {
+  margin-bottom: 30px;
+}
+
+.paper-title {
+  margin-bottom: 5px;
+}
+
+.paper-links {
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.paper-links a {
+  font-weight: bold;
+}
 
 
