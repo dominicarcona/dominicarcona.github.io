@@ -1,45 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research | Dominic Arcona</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
-  
-<script src="script.js"></script>
-  
+
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="research.html" class="active">Research</a>
-  <a href="teaching.html">Teaching</a>
-  <a href="projects.html">Projects</a>
-  <a href="misc.html">Misc</a>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="research.html" class="active">Research</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="projects.html">Projects</a>
+    <a href="misc.html">Misc</a>
 
-  <button id="dark-toggle" style="float:right;">🌙</button>
-</nav>
+    <button id="dark-toggle">🌙</button>
+  </nav>
 
-<main>
-  <h2>Research</h2>
-
-  <p>
-  My research interests lie at the intersection of probabilistic and algebraic combinatorics. I study mixing models
-  for random walks on the symmetric group, which can be understood using Markov Chains or by applying tools from
-  representation theory. 
-  </p>
-
-  <details>
-    <summary>Submitted Pre-prints</summary>
-    <div>
-      <ul>
-        <li>Solo author, <em>Representation theory and cycle statistics for random walks on the symmetric group</em>, preprint available <a href="https://www.arxiv.org/abs/2512.13969" target="_blank">here</a>, 2025.</li>
-        <li>Solo author, <em>Tensor powers of virtual symmetric group representations encoding permutation cycle type statistics</em>, FPSAC 2026 Extended Abstract Submission, 2025.</li>
-      </ul>
+  <!-- HERO BANNER -->
+  <div class="hero hero-small">
+    <div class="hero-overlay">
+      <div class="hero-text">Research</div>
     </div>
-  </details>
-</main>
+  </div>
 
+  <main>
+
+    <!-- RESEARCH OVERVIEW -->
+    <section>
+      <p>
+        My research lies at the intersection of probability, combinatorics, and stochastic processes.
+        I am particularly interested in mixing times of Markov chains and card shuffling models. 
+        My work focuses on probabilistic applications of algebraic tools from representation theory 
+        and symmetric function theory to better understand convergence phenomena.
+      </p>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section>
+      <h2>Preprints & Publications</h2>
+
+      <!-- Paper 1 -->
+      <div class="paper">
+        <p class="paper-title">
+          <strong>Representation theory and cycle statistics for random walks on the symmetric group</strong><br>
+          Solo author
+        </p>
+
+        <p class="paper-links">
+          <a href="https://www.arxiv.org/abs/2512.13969">arXiv</a> ·
+        </p>
+
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            We use representation theory of Sn to analyze the mixing of permutation cycle type statistics 
+            aj(σ)={# of j-cycles of σ} for any fixed j and σ resulting from a random i-cycle walk on Sn. 
+            We also derive analogous results for the random star transposition walk. Our approach uses 
+            the method of moments; a key ingredient is a new formula for the coefficients in the 
+            irreducible character decomposition of the Sn-class function (aj)r(σ)={(# of j-cycles of σ)r} 
+            for any positive integers r,j when n≥2rj.
+          </p>
+        </details>
+      </div>
+
+      <!-- Paper 2 -->
+      <div class="paper">
+        <p class="paper-title">
+          <strong>Tensor powers of virtual symmetric group representations encoding permutation cycle type statistics</strong><br>
+          Solo author<br>
+          FPSAC 2026 Extended Abstract Submission
+        </p>
+
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            It is well known that the character of the defining representation of $S_n$ over $\mathbb{C}$, 
+            $\chi^\varrho(\sigma)$ encodes the number of fixed points of a permutation $\sigma \in S_n$. 
+            It is hard in general to take tensor products of representations of $S_n$, but it is known how 
+            to decompose tensor powers of the defining representation as a direct sum of irreducible 
+            representations. Alon and Kozma gave a decomposition of the $S_n$-class function 
+            $a_j(\sigma)$ = \{\#$j$-cycles of $\sigma$\} in terms of irreducible characters. This class 
+            function is the character of a virtual representation of $S_n$. We describe how to decompose 
+            tensor powers of this virtual representation as a linear combination of irreducible 
+            representations when $n$ is large enough. As an application, we state a new result concerning 
+            $j$-cycle mixing via the random $i$-cycle walk on $S_n$.
+          </p>
+        </details>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Dominic Arcona
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
