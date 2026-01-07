@@ -90,6 +90,41 @@ nav a:hover {
   color: var(--text-gray);
 }
 
+/* ---------- HOME PAGE TWO-COLUMN LAYOUT ---------- */
+.home-content {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.home-left {
+  flex: 2;
+}
+
+.home-right {
+  flex: 1;
+  text-align: center;
+}
+
+.home-right img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Stack on mobile */
+@media (max-width: 800px) {
+  .home-content {
+    flex-direction: column;
+  }
+
+  .home-right {
+    order: -1;
+  }
+}
+
 /* ---------- LINKS BAR ---------- */
 .links {
   margin-top: 10px;
