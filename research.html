@@ -7,6 +7,17 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
+  
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']]
+    }
+  };
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <body>
 
@@ -45,7 +56,7 @@
       <h2>Preprints & Publications</h2>
 
       <!-- Paper 1 -->
-      <div class="paper">
+      <div class="paper-card">
         <p class="paper-title">
           <strong>Representation theory and cycle statistics for random walks on the symmetric group</strong><br>
           Solo author
@@ -55,40 +66,40 @@
           <a href="https://www.arxiv.org/abs/2512.13969">arXiv</a> ·
         </p>
 
-        <details>
+        <details class="paper-abstract">
           <summary>Abstract</summary>
           <p>
             We use representation theory of Sn to analyze the mixing of permutation cycle type statistics 
-            aj(σ)={# of j-cycles of σ} for any fixed j and σ resulting from a random i-cycle walk on Sn. 
+            \( a_j(σ)={# of j-cycles of σ}\) for any fixed j and σ resulting from a random i-cycle walk on Sn. 
             We also derive analogous results for the random star transposition walk. Our approach uses 
             the method of moments; a key ingredient is a new formula for the coefficients in the 
-            irreducible character decomposition of the Sn-class function (aj)r(σ)={(# of j-cycles of σ)r} 
-            for any positive integers r,j when n≥2rj.
+            irreducible character decomposition of the Sn-class function \((a_j)r(σ)={(# of j-cycles of σ)r}\)
+            for any positive integers \(r,j\) when \(n≥2rj\).
           </p>
         </details>
       </div>
 
       <!-- Paper 2 -->
-      <div class="paper">
+      <div class="paper-card">
         <p class="paper-title">
           <strong>Tensor powers of virtual symmetric group representations encoding permutation cycle type statistics</strong><br>
           Solo author<br>
           FPSAC 2026 Extended Abstract Submission
         </p>
 
-        <details>
+        <details class="paper-abstract">
           <summary>Abstract</summary>
           <p>
-            It is well known that the character of the defining representation of $S_n$ over $\mathbb{C}$, 
-            $\chi^\varrho(\sigma)$ encodes the number of fixed points of a permutation $\sigma \in S_n$. 
-            It is hard in general to take tensor products of representations of $S_n$, but it is known how 
+            It is well known that the character of the defining representation of \(S_n\) over \(\mathbb{C}\), 
+            \(\chi^\varrho(\sigma)\) encodes the number of fixed points of a permutation \(\sigma \in S_n\). 
+            It is hard in general to take tensor products of representations of \(S_n\), but it is known how 
             to decompose tensor powers of the defining representation as a direct sum of irreducible 
-            representations. Alon and Kozma gave a decomposition of the $S_n$-class function 
-            $a_j(\sigma)$ = \{\#$j$-cycles of $\sigma$\} in terms of irreducible characters. This class 
-            function is the character of a virtual representation of $S_n$. We describe how to decompose 
+            representations. Alon and Kozma gave a decomposition of the \(S_n\)-class function 
+            \(a_j(\sigma)\) = {#\(j\)-cycles of \(\sigma\)} in terms of irreducible characters. This class 
+            function is the character of a virtual representation of \(S_n\). We describe how to decompose 
             tensor powers of this virtual representation as a linear combination of irreducible 
-            representations when $n$ is large enough. As an application, we state a new result concerning 
-            $j$-cycle mixing via the random $i$-cycle walk on $S_n$.
+            representations when \(n\) is large enough. As an application, we state a new result concerning 
+            \(j\)-cycle mixing via the random \(i\)-cycle walk on \(S_n\).
           </p>
         </details>
       </div>
