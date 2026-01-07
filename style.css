@@ -196,7 +196,7 @@ body.dark nav a.active {
 .hero {
   width: 100%;
   height: 350px;
-  background: center / cover no-repeat url("../files/hero-background.jpg");
+  background: center / cover no-repeat url("../files/background.jpeg");
   position: relative;
   margin-bottom: 40px;
 }
