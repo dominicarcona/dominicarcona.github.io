@@ -373,25 +373,36 @@ body.dark .paper-card {
 
 /* ---------- PUBLICATION LIST ---------- */
 .pub-list {
-  padding-left: 25px;
-}
-
-.pub-list li {
-  margin-bottom: 30px;
+  padding-left: 20px;
 }
 
 .pub-entry {
   margin-bottom: 6px;
 }
 
-/* Abstract toggle (no box, no border) */
+/* ---------- ABSTRACT EXPANDERS (MINIMAL) ---------- */
+.pub-abstract {
+  margin-top: 6px;
+}
+
 .pub-abstract summary {
   cursor: pointer;
-  font-weight: bold;
+  font-weight: normal;
   color: var(--accent);
 }
 
+.pub-abstract summary:hover {
+  text-decoration: underline;
+}
+
+/* Remove default details styling */
+.pub-abstract {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
 .pub-abstract p {
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
