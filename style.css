@@ -628,7 +628,6 @@ body.dark .interest-card {
   object-fit: cover;
   object-position: top;
   height: 100%;
-  max-height: 450px;
   display: block;
 }
 
