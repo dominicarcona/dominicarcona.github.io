@@ -553,3 +553,114 @@ body.dark .tool-pill {
   }
 }
 
+/* INTEREST SECTION STYLING */
+
+.interest-block {
+  margin-bottom: 4rem;
+}
+
+.interest-header {
+  margin-bottom: 20px;
+}
+
+.interest-header h2 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-right: 50px;
+}
+
+.section-divider {
+  border: 0;
+  height: 1px;
+  background: #eee;
+  margin: 4rem 0;
+}
+
+.misc-links {
+  margin-top: 15px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn-misc {
+  background: transparent;
+  color: #007bff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid #007bff;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-misc:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.interest-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+}
+
+.interest-card h3 {
+  margin-top: 0;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.interest-card ul {
+  padding-left: 18px;
+  margin-bottom: 0;
+}
+
+.interest-card li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.misc-img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 100%;
+  max-height: 300px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Dark Mode Overrides */
+body.dark-mode .interest-card {
+  background: #1e1e1e;
+  border-left-color: #3794ff;
+}
+
+body.dark-mode .interest-card h3 {
+  color: #eee;
+}
+
+body.dark-mode .section-divider {
+  background: #333;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .interest-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .interest-media {
+    order: -1; /* Puts the volleyball photo above the stats on mobile */
+  }
+}
+
