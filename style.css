@@ -1,14 +1,24 @@
 /* ---------- GLOBAL VARIABLES ---------- */
 :root {
-  --bg-color: white;
-  --text-color: #222;
-  --accent: #1a73e8;
-  --light-gray: #f5f5f5;
-  --border-gray: #ddd;
-  --text-gray: #555;
-  --accent: #4f46e5;     /* Indigo */
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --accent: #4f46e5;      /* Indigo */
   --accent-light: #6366f1;
   --accent-dark: #3730a3;
+  --light-gray: #f5f5f5;
+  --border-gray: #dddddd;
+  --text-gray: #555555;
+  --card-bg: #f8f9fa;
+}
+
+/* Consolidated Dark Mode Variables */
+body.dark {
+  --bg-color: #121212;
+  --text-color: #eaeaea;
+  --light-gray: #1e1e1e;
+  --border-gray: #333333;
+  --text-gray: #aaaaaa;
+  --card-bg: #1e1e1e;
 }
 
 /* ---------- BASE STYLES ---------- */
@@ -18,6 +28,7 @@ body {
   line-height: 1.6;
   background-color: var(--bg-color);
   color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 main {
@@ -26,15 +37,19 @@ main {
   padding: 30px 20px;
 }
 
-h1, h2, h3 {
-  color: var(--text-color);
-}
+h1, h2, h3 { color: var(--text-color); }
 
 h2 {
   border-bottom: 2px solid var(--border-gray);
   padding-bottom: 5px;
   margin-top: 40px;
+  color: var(--accent-dark);
 }
+
+body.dark h2 { color: #ffffff; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-light); text-decoration: underline; }
 
 /* ---------- NAVIGATION ---------- */
 nav {
@@ -60,211 +75,16 @@ nav a.active {
   border-radius: 6px;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* ---------- HOME PAGE HEADER ---------- */
-.home-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 30px;
-}
-
-.home-header img {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.home-text h1 {
-  margin: 0;
-  font-size: 2.2em;
-}
-
-.home-text p {
-  margin-top: 8px;
-  color: var(--text-gray);
-}
-
-/* ---------- HOME PAGE TWO-COLUMN LAYOUT ---------- */
-.home-content {
-  display: flex;
-  gap: 50px;
-  align-items: flex-start;
-}
-
-.home-left {
-  flex: 2;
-}
-
-.home-right {
-  flex: 1;
-  text-align: center;
-}
-
-.home-right img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-/* Stack on mobile */
-@media (max-width: 800px) {
-  .home-content {
-    flex-direction: column;
-  }
-
-  .home-right {
-    order: -1;
-  }
-}
-
-/* ---------- HOME RIGHT COLUMN CARD ---------- */
-.home-right {
-  flex: 1;
-  text-align: center;
-  background: var(--light-gray);
-  border: 1px solid var(--border-gray);
-  border-radius: 14px;
-  padding: 25px 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
-
-.home-right img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-/* Dark mode: slightly stronger contrast */
-body.dark .home-right {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-}
-
-/* ---------- LINKS BAR ---------- */
-.links {
-  margin-top: 10px;
-}
-
-.links a {
-  display: inline-block;
-  margin-right: 15px;
-  margin-bottom: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--accent);
-}
-
-.links a:hover {
-  text-decoration: underline;
-}
-
-/* ---------- DETAILS / EXPANDABLE BOXES ---------- */
-details {
-  background: var(--light-gray);
-  border: 1px solid var(--border-gray);
-  border-radius: 8px;
-  padding: 12px 15px;
-  margin-bottom: 15px;
-}
-
-summary {
-  font-weight: bold;
-  cursor: pointer;
-}
-
-details > div,
-details > ul {
-  margin-top: 10px;
-}
-
-details[open] summary {
-  margin-bottom: 8px;
-}
-
-/* ---------- LISTS ---------- */
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 6px;
-}
-
-/* ---------- PROJECT CARDS (optional future use) ---------- */
-.project-card {
-  background: var(--light-gray);
-  border: 1px solid var(--border-gray);
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 20px;
-}
-
-.project-card img {
-  max-width: 100%;
-  border-radius: 6px;
-  margin-top: 10px;
-}
-
-/* ---------- FOOTER ---------- */
-footer {
-  text-align: center;
-  padding: 20px;
-  border-top: 1px solid var(--border-gray);
-  color: var(--text-gray);
-  font-size: 0.9em;
-  margin-top: 60px;
-}
-
-/* ---------- MOBILE TWEAKS ---------- */
-@media (max-width: 600px) {
-  .home-header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav a {
-    display: inline-block;
-    margin-bottom: 8px;
-  }
-}
-
-/* ---------- DARK MODE ---------- */
-body.dark {
-  --bg-color: #121212;
-  --text-color: #eaeaea;
-  --light-gray: #1e1e1e;
-  --border-gray: #333;
-  --text-gray: #aaa;
-}
-
-body.dark nav {
-  background-color: #121212;
-}
-
-body.dark nav a.active {
-  background-color: #333;
-}
-
-/* -------------------------------- */
-/* Hero / Banner */
+/* ---------- HERO / BANNER ---------- */
 .hero {
   width: 100%;
   background: center / cover no-repeat;
   position: relative;
-  margin-bottom: 40px;
+  height: 250px;
 }
 
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.45); /* dark overlay for contrast */
+  background: rgba(0, 0, 0, 0.45);
   width: 100%;
   height: 100%;
   display: flex;
@@ -273,331 +93,43 @@ body.dark nav a.active {
 }
 
 .hero-text {
-  text-align: center;
   color: white;
   font-size: 2.4rem;
   font-weight: bold;
   text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
 }
 
-.hero-small {
-  height: 250px;
-}
+.hero-misc { background-image: url("files/misc-background.jpeg"); }
+/* Add other hero backgrounds here */
 
-/* ---------- PAGE-SPECIFIC HERO IMAGES ---------- */
-.hero-home {
-  height: 300px;
-  background-image: url("files/background.jpeg");
-}
-
-.hero-research {
-  background-image: url("files/research-background2.jpeg");
-}
-
-.hero-projects {
-  background-image: url("files/projects-background2.jpeg");
-}
-
-.hero-misc {
-  background-image: url("files/misc-background.jpeg");
-}
-
-.hero-teaching {
-  background-image: url("files/teaching-background.jpeg");
-}
-
-/* Accent color for section headings */
-h2 {
-  color: var(--accent-dark);
-}
-
-/* Accent color for detail summaries */
-summary {
-  color: var(--accent);
-}
-
-/* Accent for links */
-a {
-  color: var(--accent);
-}
-
-a:hover {
-  color: var(--accent-light);
-}
-
-/* ---------- RESEARCH PAPERS ---------- */
-.paper {
-  margin-bottom: 30px;
-}
-
-.paper-title {
-  margin-bottom: 5px;
-}
-
-.paper-links {
-  margin-bottom: 10px;
-  font-size: 0.95em;
-}
-
-.paper-links a {
-  font-weight: bold;
-}
-
-/* ---------- PAPER CARDS ---------- */
-.paper-card {
-  background: var(--light-gray);
-  border: 1px solid var(--border-gray);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 25px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-}
-
-.paper-abstract {
-  margin-top: 10px;
-}
-
-.paper-abstract summary {
-  font-weight: bold;
-  color: var(--accent);
-}
-
-.paper-abstract p {
-  margin-top: 10px;
-}
-
-/* Dark mode refinement */
-body.dark .paper-card {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-}
-
-/* ---------- PUBLICATION LIST ---------- */
-.pub-list {
-  padding-left: 20px;
-}
-
-.pub-entry {
-  margin-bottom: 6px;
-}
-
-/* ---------- ABSTRACT EXPANDERS (MINIMAL) ---------- */
-.pub-abstract {
-  margin-top: 6px;
-}
-
-.pub-abstract summary {
-  cursor: pointer;
-  font-weight: normal;
-  color: var(--accent);
-}
-
-.pub-abstract summary:hover {
-  text-decoration: underline;
-}
-
-/* Remove default details styling */
-.pub-abstract {
-  background: none;
-  border: none;
-  padding: 0;
-}
-
-.pub-abstract p {
-  margin-top: 6px;
-}
-
-/* PROJECTS GRID */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-/* PROJECT CARD */
-.project-card {
-  background: var(--card-bg, #f7f7f7);
-  padding: 1.5rem;
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-}
-
-body.dark .project-card {
-  background: #1e1e1e;
-}
-
-/* HEADINGS */
-.project-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-/* CONTEXT SENTENCE */
-.project-context {
-  font-style: italic;
-  color: #555;
-  margin-bottom: 1rem;
-}
-
-body.dark .project-context {
-  color: #bbb;
-}
-
-/* BULLET POINTS */
-.project-points {
-  margin: 0 0 1rem 1.2rem;
-  padding: 0;
-}
-
-.project-points li {
-  margin-bottom: 0.4rem;
-}
-
-/* TOOL PILLS */
-.project-tools {
-  margin-top: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tool-pill {
-  background: #e0e7ff;
-  color: #1e3a8a;
-  padding: 0.3rem 0.7rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  white-space: nowrap;
-}
-
-body.dark .tool-pill {
-  background: #2a2f4a;
-  color: #c7d2fe;
-}
-
-/* PROJECTS LAYOUT */
-.projects-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.project-card.horizontal {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1.5rem;
-  border-radius: 12px;
-  background: var(--card-bg, #f8f9fb);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-}
-
-/* Main content */
-.project-main h3 {
-  margin-top: 0;
-  margin-bottom: 0.4rem;
-}
-
-.project-context {
-  font-style: italic;
-  color: #555;
-  margin-bottom: 0.6rem;
-}
-
-.project-highlights,
-.project-role {
-  font-size: 0.95rem;
-  margin: 0.4rem 0;
-}
-
-.project-points {
-  margin-top: 0.6rem;
-  padding-left: 1.2rem;
-}
-
-/* Tools row */
-.project-tools {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.8rem;
-}
-
-.tool-pill {
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  background: #e6ecff;
-  color: #2a3a8f;
-  white-space: nowrap;
-}
-
-/* Responsive: side-by-side on wide screens */
-@media (min-width: 900px) {
-  .project-card.horizontal {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .project-main {
-    flex: 3;
-  }
-
-  .project-tools {
-    flex: 1;
-    justify-content: flex-start;
-    align-content: flex-start;
-  }
-}
-
-/* INTEREST SECTION STYLING */
-
-.interest-block {
-  margin-bottom: 4rem;
-}
-
-.interest-header {
-  margin-bottom: 20px;
-}
+/* ---------- INTEREST / MISC SECTION ---------- */
+.interest-block { margin-bottom: 4rem; }
 
 .interest-header h2 {
-  margin-bottom: 10px;
-  border-bottom: 2px solid #007bff;
+  border-bottom: 2px solid var(--accent);
   display: inline-block;
   padding-right: 50px;
-}
-
-.section-divider {
-  border: 0;
-  height: 1px;
-  background: #eee;
-  margin: 4rem 0;
 }
 
 .misc-links {
   margin-top: 15px;
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .btn-misc {
-  background: transparent;
-  color: #007bff;
+  border: 1px solid var(--accent);
   padding: 6px 14px;
   border-radius: 4px;
-  text-decoration: none;
   font-size: 0.85rem;
   font-weight: 600;
-  border: 1px solid #007bff;
-  transition: 0.2s ease-in-out;
+  transition: 0.2s;
 }
 
 .btn-misc:hover {
-  background: #007bff;
-  color: #fff;
+  background: var(--accent);
+  color: #fff !important;
 }
 
 .interest-grid {
@@ -607,208 +139,78 @@ body.dark .tool-pill {
   margin-top: 25px;
 }
 
+/* THE CARD FIX: Forces white background and dark text even in dark mode */
 .interest-card {
-  background: #f8f9fa;
+  background: #ffffff !important;
   padding: 20px;
   border-radius: 8px;
-  border-left: 4px solid #007bff;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.interest-card h3 {
-  margin-top: 0;
-  font-size: 1.05rem;
-  color: #333;
+.interest-card h3, 
+.interest-card li, 
+.interest-card p, 
+.interest-card strong {
+  color: #1a1a1a !important; /* Force black text */
 }
 
-.interest-card ul {
-  padding-left: 18px;
-  margin-bottom: 0;
-}
-
-.interest-card li {
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-}
-
-/* MISC IMAGE FIX */
-.misc-img {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-  /* Focuses on the top of the image where the ball is */
-  object-position: top; 
-  height: 100%;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  display: block;
-}
-
-/* INLINE LINK STYLING */
 .interest-card a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 500;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease;
+  color: var(--accent-dark) !important;
+  font-weight: 600;
 }
 
-.interest-card a:hover {
-  border-bottom-color: #007bff;
+body.dark .interest-card {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Stronger shadow in dark mode */
 }
 
-/* DARK MODE SUPPORT FOR INLINE LINKS */
-body.dark-mode .interest-card a {
-  color: #3794ff;
-}
-
-body.dark-mode .interest-card a:hover {
-  border-bottom-color: #3794ff;
-}
-
-/* Dark Mode Overrides */
-/* --- DARK MODE LEGIBILITY FIXES --- */
-
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0; /* Sets a global light text color for dark mode */
-}
-
-body.dark-mode h2 {
-  color: #ffffff;
-}
-
-/* Fixes the intro text above the cards */
-body.dark-mode .interest-header p {
-  color: #bbbbbb;
-}
-
-/* Fixes the text inside the cards */
-body.dark-mode .interest-card {
-  background: #252525; 
-  color: #dddddd; /* High-contrast light gray for body text */
-  border-left-color: #3794ff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-body.dark-mode .interest-card h3 {
-  color: #ffffff; /* Bright white for sub-headers */
-}
-
-body.dark-mode .interest-card li {
-  color: #dddddd;
-}
-
-body.dark-mode .section-divider {
-  background: #333333;
-}
-
-/* Ensures the volleyball photo doesn't look too bright/washed out in dark mode */
-body.dark-mode .misc-img {
-  filter: brightness(0.9);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .interest-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .interest-media {
-    order: -1; /* Puts the volleyball photo above the stats on mobile */
-  }
-}
-
-/* MISC IMAGE STYLING */
+/* ---------- MEDIA & IMAGES ---------- */
 .misc-img {
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
-  object-position: top; /* Keeps the ball in view at the top of the frame */
+  object-position: top;
   height: 100%;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  max-height: 450px;
   display: block;
 }
 
-/* PHOTO CREDIT TAGLINE */
 .photo-credit {
   font-size: 0.75rem;
-  color: #666;
+  color: var(--text-gray);
   text-align: right;
   margin-top: 6px;
   font-style: italic;
-  letter-spacing: 0.02em;
 }
 
-/* DARK MODE LEGIBILITY FIXES */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
+/* ---------- RESEARCH & PROJECTS (Consolidated) ---------- */
+.paper-card, .project-card {
+  background: var(--light-gray);
+  border: 1px solid var(--border-gray);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-body.dark-mode .interest-card {
-  background: #252525;
-  color: #dddddd;
-  border-left-color: #3794ff;
+.tool-pill {
+  background: #e0e7ff;
+  color: #1e3a8a;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
 }
 
-body.dark-mode .interest-card h3 {
-  color: #ffffff;
+body.dark .tool-pill {
+  background: #2a2f4a;
+  color: #c7d2fe;
 }
 
-body.dark-mode .photo-credit {
-  color: #999;
-}
-
-body.dark-mode .interest-header p,
-body.dark-mode .interest-card li {
-  color: #cccccc;
-}
-
-/* INLINE LINK STYLING */
-.interest-card a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 500;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease;
-}
-
-.interest-card a:hover {
-  border-bottom-color: #007bff;
-}
-
-body.dark-mode .interest-card a {
-  color: #3794ff;
-}
-
-/* --- DARK MODE CARD FIX --- */
-
-/* This targets the cards specifically when dark mode is on */
-body.dark-mode .interest-card {
-  background-color: #ffffff !important; /* Force background to stay white */
-  border-left: 4px solid #007bff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth on dark background */
-}
-
-/* Force all text inside the card to stay black/dark */
-body.dark-mode .interest-card h3,
-body.dark-mode .interest-card li,
-body.dark-mode .interest-card strong,
-body.dark-mode .interest-card p {
-  color: #1a1a1a !important; 
-}
-
-/* Ensure inline links inside the white card are still readable */
-body.dark-mode .interest-card a {
-  color: #0056b3 !important;
-  border-bottom: 1px solid rgba(0, 86, 179, 0.3);
-}
-
-body.dark-mode .interest-card a:hover {
-  border-bottom-color: #0056b3;
-}
-
-/* The photo credit sits outside the card, so we make it light gray to match the dark body */
-body.dark-mode .photo-credit {
-  color: #999;
+/* ---------- MOBILE RESPONSIVENESS ---------- */
+@media (max-width: 768px) {
+  .interest-grid, .home-content {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+  .interest-media { order: -1; }
 }
