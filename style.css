@@ -781,3 +781,34 @@ body.dark-mode .interest-card a {
   color: #3794ff;
 }
 
+/* --- DARK MODE CARD FIX --- */
+
+/* This targets the cards specifically when dark mode is on */
+body.dark-mode .interest-card {
+  background-color: #ffffff !important; /* Force background to stay white */
+  border-left: 4px solid #007bff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth on dark background */
+}
+
+/* Force all text inside the card to stay black/dark */
+body.dark-mode .interest-card h3,
+body.dark-mode .interest-card li,
+body.dark-mode .interest-card strong,
+body.dark-mode .interest-card p {
+  color: #1a1a1a !important; 
+}
+
+/* Ensure inline links inside the white card are still readable */
+body.dark-mode .interest-card a {
+  color: #0056b3 !important;
+  border-bottom: 1px solid rgba(0, 86, 179, 0.3);
+}
+
+body.dark-mode .interest-card a:hover {
+  border-bottom-color: #0056b3;
+}
+
+/* The photo credit sits outside the card, so we make it light gray to match the dark body */
+body.dark-mode .photo-credit {
+  color: #999;
+}
