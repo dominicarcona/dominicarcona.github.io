@@ -638,8 +638,6 @@ body.dark .tool-pill {
   /* Focuses on the top of the image where the ball is */
   object-position: top; 
   height: 100%;
-  /* Increased height to show more of the action */
-  max-height: 450px; 
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   display: block;
 }
